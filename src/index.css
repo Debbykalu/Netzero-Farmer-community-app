@@ -11,3 +11,383 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  background-color: #987e4b;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-toggle-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggle.open .navbar-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-item {
+  margin-left: 1rem;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+
+
+
+/* Login page*/
+
+.LoginForm {
+  width: 400px;
+  background-color: #987e4b;
+  margin: 10% auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.LoginForm h2 {
+  font-size: 40px;
+  font-weight: 200;
+  color:#fff;
+}
+
+.LoginForm form {
+   padding: 20px 0;
+  position: relative;
+}
+
+.LoginForm label{
+  color: #fff
+}
+
+.LoginForm input {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
+
+.LoginForm button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #e7cfa3;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+}
+
+.LoginForm button:hover {
+  background-color: #7e8082;
+}
+.exchangebuttom {
+  color: #fff;
+}
+
+.exchangebutton {
+  color: #fff;
+}
+.exchangebuttom button{
+  appearance: none;
+  outline: 0;
+  background-color: #1b30301c;
+  border: 0;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 3px;
+  width: 75px;
+  font-size: 18px;
+}
+.exchangebutton button{
+  appearance: none;
+  outline: 0;
+  background-color: #1b30301c;
+  border: 0;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 3px;
+  width: 100px;
+  font-size: 18px;
+}
+/* Register page*/
+
+.RegistrationForm {
+  width: 400px;
+  background-color: #987e4b;
+  margin: 10% auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.RegistrationForm h2 {
+  font-size: 40px;
+  font-weight: 200;
+  color:#fff;
+}
+
+.RegistrationForm form {
+   padding: 20px 0;
+  position: relative;
+}
+
+.RegistrationForm label{
+  color: #fff
+}
+
+.RegistrationForm input {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
+
+.RegistrationForm button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #e7cfa3;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+}
+
+.RegistrationForm button:hover {
+  background-color: #7e8082;
+}
+.exchangebuttom {
+  color: #fff;
+}
+
+.exchangebutton {
+  color: #fff;
+}
+.exchangebuttom button{
+  appearance: none;
+  outline: 0;
+  background-color: #1b30301c;
+  border: 0;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 3px;
+  width: 75px;
+  font-size: 18px;
+}
+.exchangebutton button{
+  appearance: none;
+  outline: 0;
+  background-color: #1b30301c;
+  border: 0;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 3px;
+  width: 100px;
+  font-size: 18px;
+}
+
+
+/* User Profile*/
+
+.profile-container {
+  max-width: 400px;
+  margin-top: 30px !important;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.profile-container input[type="text"],
+.profile-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile-container textarea {
+  height: 100px;
+}
+
+.profile-container button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.profile-container button:hover {
+  background-color: #45a049;
+}
+
+/*Discussion forum*/
+
+.ourChallenges{
+  color: #fff;
+}
+
+.discForum{
+  padding: 50px;
+}
+.discForum button{
+  padding: 10px 15px;
+  margin-top: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.discForum .textarea{
+  width: 300px;
+  height: 90px;
+}
+
+.challenge-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.challenge-card {
+  background-color: #987e4b;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.challenge-card input{
+  padding: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #141414;
+}
+
+.comment-actions {
+  margin-top: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer p:first-child {
+  font-weight: bold;
+}
+
+
