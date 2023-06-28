@@ -1,91 +1,81 @@
 import React, { useState } from 'react';
 
-function FootprintCalculator() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    businessName: '',
-    energyConsumption: '',
-    transportation: '',
-    wasteManagement: '',
-    supplyChain: '',
-    isLoading: false,
-    error: ''
-  });
+const FootprintCalculator = () => {
+  const [electricityUsage, setElectricityUsage] = useState('');
+  const [naturalGasUsage, setNaturalGasUsage] = useState('');
+  const [transportationUsage, setTransportationUsage] = useState('');
+  const [totalEmissions, setTotalEmissions] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const calculateEmissions = (event) => {
+    event.preventDefault();
+
+    // Calculate total emissions based on user inputs
+    const emissions = calculateTotalEmissions(electricityUsage, naturalGasUsage, transportationUsage);
+
+    // Update the total emissions state
+    setTotalEmissions(emissions);
+
+    // Clear the form fields
+    setElectricityUsage('');
+    setNaturalGasUsage('');
+    setTransportationUsage('');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const {
-      name,
-      email,
-      businessName,
-      energyConsumption,
-      transportation,
-      wasteManagement,
-      supplyChain
-    } = formData;
+  const calculateTotalEmissions = (electricity, naturalGas, transportation) => {
+    // Calculate emissions based on specific formulas for each category
+    const electricityEmissions = electricity * 0.5; // Example calculation for electricity emissions
+    const naturalGasEmissions = naturalGas * 0.7; // Example calculation for natural gas emissions
+    const transportationEmissions = transportation * 0.9; // Example calculation for transportation emissions
 
-    if (!name || !email || !businessName || !energyConsumption || !transportation || !wasteManagement || !supplyChain) {
-      setFormData({ ...formData, error: 'Please fill in all the required fields.' });
-      return;
-    }
+    // Sum up the emissions from each category
+    const totalEmissions = electricityEmissions + naturalGasEmissions + transportationEmissions;
 
-    setFormData({ ...formData, isLoading: true, error: '' });
-
-    // Simulate sending data to the server and generating the report
-    setTimeout(() => {
-      // Perform server request
-      // ...
-
-      // After receiving the response, handle the generated report
-      const report = { /* Received report data from the server */ };
-      setFormData({ ...formData, isLoading: false });
-
-      console.log('Generated report:', report);
-    }, 2000); // Simulating a delay of 2 seconds
+    return totalEmissions;
   };
 
   return (
-    <div className='profile-container'>
-      <h1>User Registration</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+    <div className="footprint-calculator">
+      <h2>Footprint Calculator for SMEs</h2>
+      <form onSubmit={calculateEmissions}>
+        <div className="form-group">
+          <label htmlFor="electricity-usage">Electricity Usage (kWh)</label>
+          <input
+            type="number"
+            id="electricity-usage"
+            value={electricityUsage}
+            onChange={(event) => setElectricityUsage(event.target.value)}
+            required
+          />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="natural-gas-usage">Natural Gas Usage (m³)</label>
+          <input
+            type="number"
+            id="natural-gas-usage"
+            value={naturalGasUsage}
+            onChange={(event) => setNaturalGasUsage(event.target.value)}
+            required
+          />
         </div>
-        <div>
-          <label htmlFor="businessName">Business Name:</label>
-          <input type="text" id="businessName" name="businessName" value={formData.businessName} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="transportation-usage">Transportation Usage (km)</label>
+          <input
+            type="number"
+            id="transportation-usage"
+            value={transportationUsage}
+            onChange={(event) => setTransportationUsage(event.target.value)}
+            required
+          />
         </div>
-        <div>
-          <label htmlFor="energyConsumption">Energy Consumption:</label>
-          <input type="number" id="energyConsumption" name="energyConsumption" value={formData.energyConsumption} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="transportation">Transportation:</label>
-          <input type="text" id="transportation" name="transportation" value={formData.transportation} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="wasteManagement">Waste Management:</label>
-          <input type="text" id="wasteManagement" name="wasteManagement" value={formData.wasteManagement} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="supplyChain">Supply Chain:</label>
-          <input type="text" id="supplyChain" name="supplyChain" value={formData.supplyChain} onChange={handleChange} required />
-        </div>
-        {formData.error && <div>{formData.error}</div>}
-        <button type="submit" disabled={formData.isLoading}>{formData.isLoading ? 'Loading...' : 'Submit'}</button>
+        <button type="submit">Calculate Emissions</button>
       </form>
+      {totalEmissions !== null && (
+        <div className="result">
+          <h3>Total Emissions: {totalEmissions} tons CO2e</h3>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default FootprintCalculator;

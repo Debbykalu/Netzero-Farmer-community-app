@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-      <a href="/" className="navbar-logo">Logo</a>
+      <a href="/" className="navbar-logo">NET-ZERO</a>
         <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span className="navbar-toggle-icon"></span>
         </button>
