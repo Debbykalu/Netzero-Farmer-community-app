@@ -66,15 +66,15 @@ const Discussionforum = () => {
 
   return (
     <div className='discForum'>
-      <h2 className='ourChallenges'>What is your Business going through?</h2>
+      <h2 className='ourChallenges'>Share ideas or ask questions here</h2>
       <form onSubmit={handleChallengeSubmit}>
         <textarea className='textarea' value={challengeText} onChange={handleChallengeInputChange} />
-        <button type="submit">Submit a Challenge</button>
+        <button type="submit">Submit Note</button>
       </form>
-      <h3 className='ourChallenges'>Submitted Challenges:</h3>
+      <h3 className='ourChallenges'>Submitted Notes</h3>
       <div className="challenge-cards">
         {challenges.length === 0 ? (
-          <p className='ourChallenges'>No challenges submitted yet.</p>
+          <p className='ourChallenges'>No Notes submitted yet.</p>
         ) : (
           challenges.map((challenge, challengeIndex) => (
             <div key={challengeIndex} className="challenge-card">
@@ -100,7 +100,7 @@ const Discussionforum = () => {
                   </div>
                 ))}
               </div>
-              <button onClick={() => handleResetChallenge(challengeIndex)}>Remove Challenge</button>
+              <button onClick={() => handleResetChallenge(challengeIndex)}>Remove</button>
             </div>
           ))
         )}

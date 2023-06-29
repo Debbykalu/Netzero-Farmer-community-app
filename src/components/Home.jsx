@@ -5,11 +5,11 @@ import '../home.css'
 const Home = () => {
   return (
     <div className="container">
-      <h1 className="display-3">FARMERS COMMUNITY</h1>
-      <h2 className="display-3">Together we can unlock the secret to Net Zero Emission</h2>
-      <p className="lead">Share your Experience and challenges here!</p>
+      <h1 className="display-3">Farmers Community</h1>
+      <h2 className="display-3">Together We Can Unlock The Secret To Net Zero Emission</h2>
+      <p className="lead">Share Your Experience And Challenge Here Let's Discuss It!</p>
       <div className='regLog'>
-        <Link className="regBtn" to="/Register">Be a Member</Link>
+        <Link className="regBtn" to="/Register">Be A Member</Link>
       </div>
     </div>
   );
